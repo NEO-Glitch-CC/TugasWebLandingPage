@@ -5,12 +5,14 @@ const Window = () => {
   return (
     <div className="fixed z-40 inset-5 bg-transparent border rounded-lg overflow-hidden">
       <div className="w-full relative h-full">
+        {/* NAVBAR */}
         <div className="absolute z-5 top-0 inset-x-0 w-full border-b">
           <Navbar/>
         </div>
         <div className="absolute z-4 left-0 inset-y-0 h-full w-16 border-r flex items-end justify-center">
           <div className="relative w-full h-full"></div>
           <div className="absolute py-2 z-6 bottom-0 inset-x-0 flex flex-col justify-center items-center left-0 min-w-14 space-y-0.5">
+            {/* SOUND ANIMATION */}
             <div className="w-2 h-px bg-black"/>
             <div className="w-5 h-px bg-black"/>
             <div className="w-3 h-px bg-black"/>

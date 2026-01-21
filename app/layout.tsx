@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Google_Sans } from "next/font/google";
+import { Google_Sans, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 
-const googleSans = Google_Sans({
-  variable: "--font-google-sans",
+// const googleSans = Google_Sans({
+//   variable: "--font-google-sans",
+//   subsets: ["latin"],
+// });
+
+const bricolagueFont = Bricolage_Grotesque({
   subsets: ["latin"],
 });
 
@@ -20,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${googleSans.variable} antialiased`}
+        className={`${bricolagueFont.className} antialiased`}
       >
         <main className="relative min-h-screen">
           {children}
