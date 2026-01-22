@@ -205,7 +205,10 @@ const GradualBlur: React.FC<GradualBlurProps> = props => {
   const { hoverIntensity, animated, onAnimationComplete, duration } = config as any;
   useEffect(() => {
     if (isVisible && animated === 'scroll' && onAnimationComplete) {
-      const t = setTimeout(() => onAnimationComplete(), parseFloat(duration) * 1000);
+      const durationMs = duration.includes('ms') 
+        ? parseFloat(duration) 
+        : parseFloat(duration) * 1000;
+      const t = setTimeout(() => onAnimationComplete(), durationMs);
       return () => clearTimeout(t);
     }
   }, [isVisible, animated, onAnimationComplete, duration]);
