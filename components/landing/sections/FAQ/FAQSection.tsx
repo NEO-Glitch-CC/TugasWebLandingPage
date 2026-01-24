@@ -78,7 +78,7 @@ setExpandedIndex(null);
 return (
 <div className='min-h-screen w-full p-6 sm:p-12 md:p-18'>
 <div ref={wrapperRef} className="w-full sm:relative flex flex-col md:flex-row items-start gap-8 md:gap-16 lg:gap-32">
-<div ref={leftContainerRef} className="border border-red-500 w-full md:w-1/2 lg:w-2/5 space-y-10">
+<div ref={leftContainerRef} className="w-full md:w-1/2 lg:w-2/5 space-y-10">
 <div className="flex items-center gap-4">
 <div className="rounded-full p-2 bg-neutral-900 flex items-center justify-center">
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
