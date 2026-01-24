@@ -19,7 +19,7 @@ const useSmoothScroll = () => {
 
       function onWheel(e: WheelEvent) {
         e.preventDefault();
-        proxy.y -= e.deltaY;
+        proxy.y += e.deltaY;
       }
 
       function onTouchMove(e: TouchEvent) {
