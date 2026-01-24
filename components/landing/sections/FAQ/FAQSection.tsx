@@ -101,31 +101,39 @@ return (
 return (
 <div className="space-y-0" key={data.question}>
 <button
-onClick={() => handleQuestionClick(index)}
-className="w-full flex items-center justify-between py-4 px-0 hover:opacity-80 transition-opacity cursor-pointer"
+  type="button"
+  onClick={() => handleQuestionClick(index)}
+  aria-expanded={expandedIndex === index}
+  aria-controls={`faq-panel-${index}`}
+  id={`faq-trigger-${index}`}
+  className="w-full flex items-center justify-between py-4 px-0 hover:opacity-80 transition-opacity cursor-pointer"
 >
-<h1 className="text-2xl font-semibold text-white text-left">{data.question}</h1>
-<svg
-xmlns="http://www.w3.org/2000/svg"
-fill="none"
-viewBox="0 0 24 24"
-strokeWidth={1.5}
-stroke="currentColor"
-className={`size-4 text-neutral-300 transition-transform duration-500 shrink-0 ${expandedIndex === index ? "rotate-0" : "-rotate-90"}`}
->
-<path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-</svg>
+  <h1 className="text-2xl font-semibold text-white text-left">{data.question}</h1>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    className={`size-4 text-neutral-300 transition-transform duration-500 shrink-0 ${expandedIndex === index ? "rotate-0" : "-rotate-90"}`}
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+  </svg>
 </button>
 <div
-ref={(el) => {
-answerRefs.current[index] = el;
-}}
-className="overflow-hidden"
-style={{
-height: expandedIndex === index ? "auto" : 0,
-opacity: expandedIndex === index ? 1 : 0,
-marginTop: expandedIndex === index ? 24 : 0,
-}}
+  id={`faq-panel-${index}`}
+  role="region"
+  aria-labelledby={`faq-trigger-${index}`}
+  aria-hidden={expandedIndex !== index}
+  ref={(el) => {
+    answerRefs.current[index] = el;
+  }}
+  className="overflow-hidden"
+  style={{
+    height: expandedIndex === index ? "auto" : 0,
+    opacity: expandedIndex === index ? 1 : 0,
+    marginTop: expandedIndex === index ? 24 : 0,
+  }}
 >
 <p className="font-thin text-neutral-300 text-md pb-6">{data.answers}</p>
 </div>
