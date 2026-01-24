@@ -45,7 +45,7 @@ declare global {
 
   type FAQSectionData = {
     question: string;
-    answers: string;
+    answer: string;
   }
 
 };
